@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+
+        title ElectroPort
+
+        script if (typeof module === 'object') {window.module = module; module = undefined;} //fixes scripts for electron
+
+        //js imports
+        script(src='js/jquery-3.2.1.min.js')
+        script(src='js/jquery-ui.min.js')
+        script(src="js/bootstrap.min.js")
+
+        //css imports
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/bootstrap-theme.min.css")
+
+
+        //my stuff
+        link(rel='stylesheet', href='css/main.css')
+        script(src='client.js')
+
+        script if (window.module) module = window.module;
+
+    body
+
+        .page-header
+            h1 Welcome to ElectroPort
+            small an electron based port scanner
+
+        #settings.panel.container-fluid
+            .row
+                .col-xs-4.col-md-4.col-lg-4
+                    label(for='host') host / address
+                    input(type='text' name='host' id='host')
+                .col-xs-2.col-md-2.col-lg-2
+                    label(for='portFrom') Port From
+                    input(type="number" name="portFrom" id="portFrom", min=1, max=65535)
+                .col-xs-2.col-md-2.col-lg-2
+                    label(for='portTo') Port To
+                    input(type="number" name="portTo" id="portTo", min=1, max=65535)
+                .col-xs-2.col-md-2.col-lg-2
+                    button(onclick="runScan()").btn.pull-right Start Scan
+            .row
+                .col-xs-8.col-md-8.col-lg-8
+                    #progressBar.progress
+                        .progress-bar
+                .col-xs-2.col-md-2.col-lg-2
+                    #percent
+
+        #result_container.panel(hidden)
+            table.table.table-bordered
+                tbody#results
+                    tr
+                        th #
+                        th Open Port
+

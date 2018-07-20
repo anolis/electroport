@@ -1,0 +1,33 @@
+body{
+    color: #aaa;
+    padding: 20px;
+    background: #555;
+}
+
+.panel{
+    background: #aaa;
+    color: #222;
+    padding: 20px;
+}
+
+#settings .row{
+    margin-bottom: 10px;
+}
+
+input{
+    border-radius: 3px;
+    border: solid 1px #222;
+}
+.progress-bar {
+    transition: none;
+}
+#result_container{
+    padding: 30px;
+}
+table{
+    background: #ddd;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.table-bordered th, .table-bordered td { border: 1px solid #ddd!important }
+
